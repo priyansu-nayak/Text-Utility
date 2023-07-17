@@ -101,8 +101,9 @@ export default App;
 //Video #7
 
 import './App.css';
+import About from './components/About';
 import Navbar from './components/Navbar';
-import TextForm from './components/TextForm';
+// import TextForm from './components/TextForm';
 
 
 
@@ -110,9 +111,10 @@ function App() {
   return (
     <>
       <Navbar title="Utility" aboutText="JaanKari" />
-      <div className="container my-2">
+      {/* <div className="container my-2">
         <TextForm heading="Enter Text to Analyze" />
-      </div>
+      </div> */}
+      <About/>
     </>
   );
 }
