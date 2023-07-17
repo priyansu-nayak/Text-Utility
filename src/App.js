@@ -109,7 +109,7 @@ import TextForm from './components/TextForm';
 function App() {
   return (
     <>
-      <Navbar title="New Utility for Text" aboutText="JaanKari" />
+      <Navbar title="Utility" aboutText="JaanKari" />
       <div className="container my-2">
         <TextForm heading="Enter Text to Analyze" />
       </div>
