@@ -1,11 +1,18 @@
 import React from 'react'
 
 export default function About() {
+
+    let myStyle ={
+        color: 'white',
+        backgroundColor: '#212529'
+    }
+
     return (
-        <div className='container'>
+        <>
+        <div className='container' style={myStyle} >
             <h1 className='my-3'>About Us</h1>
 
-            <div className="accordion" id="accordionExample">
+            <div className="accordion" style={myStyle} id="accordionExample">
 
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
@@ -52,10 +59,8 @@ export default function About() {
 
             </div>
 
-            <div className="container">
-                <button className="btn btn-primary" type="button"></button>
-            </div>
-
         </div>
+        
+        </>
     )
 }
