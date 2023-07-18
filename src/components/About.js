@@ -2,13 +2,13 @@ import React from 'react'
 
 export default function About() {
 
-    let myStyle ={
+    let myStyle = {
         color: 'white',
         backgroundColor: '#212529'
     }
 
     return (
-        <>
+
         <div className='container' style={myStyle} >
             <h1 className='my-3'>About Us</h1>
 
@@ -58,9 +58,9 @@ export default function About() {
                 </div>
 
             </div>
-
+            <button className="">Enable Dark Mode</button>
         </div>
-        
-        </>
+
+
     )
 }
