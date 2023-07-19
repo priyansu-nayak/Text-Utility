@@ -25,7 +25,7 @@ export default function About() {
             setMyStyle({
                 color: 'white',
                 backgroundColor: '#212529'
-                , border: '5px solid #0b5ed7'
+                , border: '0px solid #0b5ed7'
             })
             setModeBtnTxt('Enable Light Mode');
         }
