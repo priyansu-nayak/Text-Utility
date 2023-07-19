@@ -1,17 +1,20 @@
 import React from 'react'
 
 export default function About() {
-
+    let myStyle = {
+        color: 'white',
+        backgroundColor : 'black'
+    }
     return (
 
-        <div className='container'  >
+        <div className='container ' style={myStyle}  >
             <h1 className='my-3'>About Us</h1>
 
             <div className="accordion"  id="accordionExample">
 
-                <div className="accordion-item">
-                    <h2 className="accordion-header" id="headingOne">
-                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <div className="accordion-item" >
+                    <h2 className="accordion-header"  id="headingOne">
+                        <button className="accordion-button" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Accordion Item #1
                         </button>
                     </h2>
@@ -23,7 +26,7 @@ export default function About() {
                     </div>
                 </div>
 
-                <div className="accordion-item">
+                <div className="accordion-item" style={myStyle}>
                     <h2 className="accordion-header" id="headingTwo">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Accordion Item #2
@@ -37,7 +40,7 @@ export default function About() {
                     </div>
                 </div>
 
-                <div className="accordion-item">
+                <div className="accordion-item" style={myStyle}>
                     <h2 className="accordion-header" id="headingThree">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             Accordion Item #3
