@@ -78,7 +78,7 @@ export default function TextForm(props) {
 
     return (
         <>
-            <div className="container">
+            <div className={`container`}>
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
                     <textarea className="form-control" id="myBox" rows="8" placeholder='Enter text here' onChange={handleOnChange} value={text} ></textarea>

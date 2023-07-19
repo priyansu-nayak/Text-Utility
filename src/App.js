@@ -110,13 +110,21 @@ import TextForm from './components/TextForm';
 
 function App() {
 
-  const[mode,setMode]=useState('dark');
+  const[mode,setMode]=useState('light');
+  const toggleMode =()=>{
+    if(mode==='light'){
+      setMode('dark')
+    }
+    else{
+      setMode('light')
+    }
+  }
 
   return (
     <>
-      <Navbar title="Utility" aboutText="JaanKari" mode={mode} />
-      <div className="container my-2">
-        <TextForm heading="Enter Text to Analyze" />
+      <Navbar title="Utility" aboutText="JaanKari" mode={mode} toggleModeFunc={toggleMode} />
+      <div className="container my-2 ">
+        <TextForm heading="Enter Text to Analyze" toggleModeFunc={toggleMode}/>
       </div>
       {/* <About/> */}
     </>
