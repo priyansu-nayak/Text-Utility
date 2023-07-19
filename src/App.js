@@ -100,6 +100,7 @@ export default App;
 
 //Video #7
 //Video #10
+/*
 import {useState} from 'react';
 import './App.css';
 // import About from './components/About';
@@ -148,7 +149,70 @@ function App() {
       <div className="container my-2 ">
         <TextForm showAlert={showAlert} heading="Enter Text to Analyze" mode={mode} toggleModeFunc={toggleMode}/>
       </div>
-      {/* <About/> */}
+      <About/> 
+    </>
+  );
+}
+
+
+export default App;
+*/
+
+//Video #16
+
+import { useState } from 'react';
+import './App.css';
+import About from './components/About';
+import Navbar from './components/Navbar';
+import TextForm from './components/TextForm';
+import Alert from './components/Alert';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+
+function App() {
+  let body = document.body;
+  const [mode, setMode] = useState('light');
+
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message, type) => {
+    setAlert({
+      msg: message,
+      type: type
+    })
+    setTimeout(() => { setAlert(null) }, 1200);
+  }
+
+  const toggleMode = () => {
+    if (mode === 'light') {
+      setMode('dark')
+      body.style.backgroundColor = '#042346';
+      body.style.color = 'white'
+      showAlert('Dark mode has been enabled', 'success');
+
+    }
+
+    else {
+      setMode('light')
+      body.style.backgroundColor = '#ffffff';
+      body.style.color = '#212925';
+      showAlert('Light mode has been enabled', 'success');
+
+    }
+  }
+
+  return (
+    <>
+      <BrowserRouter>
+        <Navbar title="Utility" aboutText="JaanKari" mode={mode} toggleModeFunc={toggleMode} />
+        <Alert alert={alert} />
+        <div className="container my-4" mode={mode}>
+          <Routes>
+            <Route exact path='/about' element={<About />}></Route>
+            <Route exact path='/' element={<TextForm showAlert={showAlert} heading="Enter Text to Analyze" mode={mode} />}></Route>
+          </Routes>
+        </div>
+      </BrowserRouter>
     </>
   );
 }
