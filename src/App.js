@@ -113,7 +113,7 @@ function App() {
   let body=document.body;
   const[mode,setMode]=useState('light');
 
-  const[alert,setAlert]=useState({});
+  const[alert,setAlert]=useState(null);
 
   const showAlert=(message,type)=>{
     setAlert({
