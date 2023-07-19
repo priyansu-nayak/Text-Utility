@@ -129,6 +129,7 @@ function App() {
       body.style.backgroundColor='#042346';
       body.style.color='white'
       showAlert('Dark mode has been enabled','success');
+
     }
     else
     {
@@ -136,6 +137,7 @@ function App() {
       body.style.backgroundColor='#ffffff';
       body.style.color='#212925';
       showAlert('Light mode has been enabled','success');
+
     }
   }
 
