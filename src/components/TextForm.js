@@ -74,7 +74,7 @@ export default function TextForm(props) {
         //  making it ready for copying.
         myBox.setSelectionRange(0,99999);
         navigator.clipboard.writeText(text.value);
-        props.showAlert("copied","success");
+        // props.showAlert("copied","success");
     }
 
     const handleExtraSpaces = () => {
