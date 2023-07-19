@@ -64,8 +64,10 @@ export default function TextForm(props) {
         setText('');
     }
     const handleCopy=()=>{
-        let text=document.getElementById('myBox');
-        text.select();
+        let myBox=document.getElementById('myBox');
+        let text=myBox.select();
+        //This method selects the text content within the element,
+        //  making it ready for copying.
         navigator.clipboard.writeText(text.value);
     }
 
