@@ -120,6 +120,7 @@ function App() {
       msg:message,
       type:type
     })
+    setTimeout(() => {setAlert(null)},1200 );
   }
 
   const toggleMode =()=>{
@@ -143,7 +144,7 @@ function App() {
       <Navbar title="Utility" aboutText="JaanKari" mode={mode} toggleModeFunc={toggleMode} />
       <Alert alert={alert}/>
       <div className="container my-2 ">
-        <TextForm heading="Enter Text to Analyze" mode={mode} toggleModeFunc={toggleMode}/>
+        <TextForm showAlert={showAlert} heading="Enter Text to Analyze" mode={mode} toggleModeFunc={toggleMode}/>
       </div>
       {/* <About/> */}
     </>

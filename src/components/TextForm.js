@@ -45,35 +45,42 @@ export default function TextForm(props) {
     const [text, setText] = useState('');
 
     const handleOnChange = (event) => {
-        
+
         setText(event.target.value);
+
         console.log(text.split(" "));
     }
 
     const handleUpClick = () => {
-        
+
         setText(text.toUpperCase());
+        props.showAlert("upperCase", "success");
     }
 
     const handleLoClick = () => {
-        
         setText(text.toLowerCase());
+        props.showAlert("lowerCase", "success");
+
     }
 
-    const handleClear = ()=>{
+    const handleClear = () => {
         setText('');
+        props.showAlert("Cleared", "success");
     }
-    const handleCopy=()=>{
-        let myBox=document.getElementById('myBox');
-        let text=myBox.select();
+    const handleCopy = () => {
+        var myBox = document.getElementById("myBox");
+        myBox.select();
         //This method selects the text content within the element,
         //  making it ready for copying.
+        myBox.setSelectionRange(0,99999);
         navigator.clipboard.writeText(text.value);
+        props.showAlert("copied","success");
     }
-    
-    const handleExtraSpaces=()=>{
-        let newText=text.split(/[ ]+/);
-        setText(newText.join(" "))
+
+    const handleExtraSpaces = () => {
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "));
+        props.showAlert("removed extra spaces", "success");
     }
 
     return (
@@ -81,7 +88,7 @@ export default function TextForm(props) {
             <div className={`container`}>
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
-                    <textarea style={{backgroundColor:props.mode==='dark'?'gray':'white',color:props.mode==='light'?'black':'white'}} className="form-control" id="myBox" rows="8" placeholder='Enter text here' onChange={handleOnChange} value={text} ></textarea>
+                    <textarea style={{ backgroundColor: props.mode === 'dark' ? 'gray' : 'white', color: props.mode === 'light' ? 'black' : 'white' }} className="form-control" id="myBox" rows="8" placeholder='Enter text here' onChange={handleOnChange} value={text} ></textarea>
                 </div>
                 <button className="btn btn-primary mx-2" onClick={handleUpClick}>UpperCase</button>
                 <button className="btn btn-primary mx-2" onClick={handleLoClick}>LowerCase</button>
@@ -96,7 +103,7 @@ export default function TextForm(props) {
                 <p>{0.008 * text.split(" ").length} minutes read</p>
                 <h2>Preview</h2>
                 <p className="text-wrap">
-                     {text.length>0?text:'Enter something to preview'}
+                    {text.length > 0 ? text : 'Enter something to preview'}
                 </p>
             </div>
         </>
