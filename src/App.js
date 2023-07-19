@@ -100,7 +100,7 @@ export default App;
 
 //Video #7
 //Video #10
-
+import {useState} from 'react';
 import './App.css';
 // import About from './components/About';
 import Navbar from './components/Navbar';
@@ -109,9 +109,12 @@ import TextForm from './components/TextForm';
 
 
 function App() {
+
+  const[mode,setMode]=useState('dark');
+
   return (
     <>
-      <Navbar title="Utility" aboutText="JaanKari" />
+      <Navbar title="Utility" aboutText="JaanKari" mode={mode} />
       <div className="container my-2">
         <TextForm heading="Enter Text to Analyze" />
       </div>
