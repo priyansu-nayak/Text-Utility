@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 
-export default function About() {
-    /*let myStyle = {
-        color: 'white',
-        backgroundColor : '#212529'
-    }*/
-    const [modeBtnTxt, setModeBtnTxt] = useState('Enable Dark Mode');
-    const [myStyle, setMyStyle] = useState(
-        {
-            color: '#212529',
-            backgroundColor: 'white'
-        }
-    )
+export default function About(props) {
+    let myStyle = {
+        color: props.mode === 'dark'?'white':'#042743',
+        backgroundColor : props.mode === 'dark'?'rgb(36,74,104)':'white'
+    }
 
+    // const [modeBtnTxt, setModeBtnTxt] = useState('Enable Dark Mode');
+    // const [myStyle, setMyStyle] = useState(
+    //     {
+    //         color: '#212529',
+    //         backgroundColor: 'white'
+    //     }
+    // )
+/*
     const toggleStyle = () => {
         if (myStyle.color === 'white') {
             setMyStyle({
@@ -30,13 +31,13 @@ export default function About() {
             setModeBtnTxt('Enable Light Mode');
         }
     }
-
+ */
 
 
     return (
 
         <div className='container ' style={myStyle}  >
-            <h1 className='my-3'>About Us</h1>
+            <h1 className='my-3' style={myStyle.color}>About Us</h1>
 
             <div className="accordion" id="accordionExample">
 
@@ -84,9 +85,7 @@ export default function About() {
                 </div>
 
             </div>
-            <div className="container my-3">
-                <button className="btn btn-primary" onClick={toggleStyle}>{modeBtnTxt}</button>
-            </div>
+            
 
         </div>
 

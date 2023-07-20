@@ -90,13 +90,13 @@ export default function TextForm(props) {
                 <div className="mb-3">
                     <textarea style={{ backgroundColor: props.mode === 'dark' ? 'gray' : 'white', color: props.mode === 'light' ? 'black' : 'white' }} className="form-control" id="myBox" rows="8" placeholder='Enter text here' onChange={handleOnChange} value={text} ></textarea>
                 </div>
-                <button className="btn btn-primary mx-2" onClick={handleUpClick}>UpperCase</button>
-                <button className="btn btn-primary mx-2" onClick={handleLoClick}>LowerCase</button>
-                <button className="btn btn-primary mx-2" onClick={handleClear}>Clear Text</button>
-                <button className="btn btn-primary mx-2" onClick={handleCopy}>Copy Text</button>
-                <button className="btn btn-primary mx-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+                <button className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>UpperCase</button>
+                <button className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>LowerCase</button>
+                <button className="btn btn-primary mx-2 my-2" onClick={handleClear}>Clear Text</button>
+                <button className="btn btn-primary mx-2 my-2" onClick={handleCopy}>Copy Text</button>
+                <button className="btn btn-primary mx-2 my-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
             </div>
-
+                
             <div className="container my-3">
                 <h1>Text Summary</h1>
                 <p>{text.split(" ").filter((e)=>{return e.length!==0}).length} words and {text.length} characters</p>
