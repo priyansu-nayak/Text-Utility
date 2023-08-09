@@ -1,12 +1,12 @@
 
-import React from 'react'
+// import React from 'react'
 
 export default function About(props) {
     let myStyle = {
         color: props.mode === 'dark' ? 'white' : '#042743'
         ,backgroundColor: props.mode === 'dark' ? 'rgb(36,74,104)' : 'white'
         ,border:'2px solid '
-        ,borderColor:'white'
+        ,borderColor: props.mode === 'dark' ? 'white' : '#042743'
     }
 
     // const [modeBtnTxt, setModeBtnTxt] = useState('Enable Dark Mode');
@@ -40,7 +40,7 @@ export default function About(props) {
 
     return (
 
-        <div className='container'style={myStyle}   >
+        <div className='container'   >
             <h1 className='my-3'  >About Us</h1>
 
             <div className="accordion" id="accordionExample">
@@ -74,7 +74,7 @@ export default function About(props) {
                 </div>
 
                 <div className="accordion-item" style={myStyle} >
-                    <h2 className="accordion-header" id="headingThree">
+                        <h2 className="accordion-header" id="headingThree">
                         <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             <strong>Browser Compatible</strong>
                         </button>
