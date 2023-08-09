@@ -183,6 +183,25 @@ function App() {
     setTimeout(() => { setAlert(null) }, 1200);
   }
 
+  /*
+  const toggleMode = () => {
+    if (mode === 'light') {
+      setMode('dark')
+      body.style.backgroundColor = '#042346';
+      body.style.color = 'white'
+      showAlert('Dark mode has been enabled', 'success');
+
+    }
+
+    else {
+      setMode('light')
+      body.style.backgroundColor = '#ffffff';
+      body.style.color = '#212925';
+      showAlert('Light mode has been enabled', 'success');
+
+    }
+  } */
+
   const toggleMode = () => {
     if (mode === 'light') {
       setMode('dark')

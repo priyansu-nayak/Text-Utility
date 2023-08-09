@@ -28,9 +28,10 @@ export default function Navbar(props) {
                         </ul>
 
                         <div className="d-flex">
-                            <div className="bg-primary rounded mx-2" style={{height:'30px',width:'30px'}}>
-                                
-                            </div>
+                            <div  className="bg-primary rounded mx-2" style={{height:'30px',width:'30px', cursor:'pointer'}} onClick={()=>{props.toggleModeFunc("primary")}}  ></div>
+                            <div  className="bg-danger rounded mx-2" style={{height:'30px',width:'30px', cursor:'pointer'}} onClick={()=>{props.toggleModeFunc("danger")}}  ></div>
+                            <div  className="bg-success rounded mx-2" style={{height:'30px',width:'30px', cursor:'pointer'}} onClick={()=>{props.toggleModeFunc("success")}}  ></div>
+                            <div  className="bg-warning rounded mx-2" style={{height:'30px',width:'30px', cursor:'pointer'}} onClick={()=>{props.toggleModeFunc("warning")}}  ></div>
                         </div>
 
                     </div>
