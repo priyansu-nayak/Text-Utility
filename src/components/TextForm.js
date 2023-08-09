@@ -88,7 +88,7 @@ export default function TextForm(props) {
             <div className={`container`}>
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
-                    <textarea style={{ backgroundColor: props.mode === 'dark' ? 'gray' : 'white', color: props.mode === 'light' ? 'black' : 'white' }} className="form-control" id="myBox" rows="8" placeholder='Enter text here' onChange={handleOnChange} value={text} ></textarea>
+                    <textarea style={{ backgroundColor: props.mode === 'dark' ? '#13466e' : 'white', color: props.mode === 'light' ? 'black' : 'white' }} className="form-control" id="myBox" rows="8" placeholder='Enter text here' onChange={handleOnChange} value={text} ></textarea>
                 </div>
                 <button className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>UpperCase</button>
                 <button className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>LowerCase</button>
@@ -100,7 +100,7 @@ export default function TextForm(props) {
             <div className="container my-3">
                 <h1>Text Summary</h1>
                 <p>{text.split(" ").filter((e)=>{return e.length!==0}).length} words and {text.length} characters</p>
-                <p>{0.008 * text.split(" ").length} minutes read</p>
+                <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} minutes read</p>
                 <h2>Preview</h2>
                 <p className="text-wrap">
                     {text.length > 0 ? text : 'Enter something to preview'}
