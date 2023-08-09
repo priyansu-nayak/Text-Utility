@@ -72,9 +72,10 @@ export default function TextForm(props) {
         myBox.select();
         //This method selects the text content within the element,
         //  making it ready for copying.
-        myBox.setSelectionRange(0,99999);
+        // myBox.setSelectionRange(0,99999);
         navigator.clipboard.writeText(text.value);
-        // props.showAlert("copied","success");
+        document.getSelection().removeAllRanges();
+        props.showAlert("copied","success");
     }
 
     const handleExtraSpaces = () => {
